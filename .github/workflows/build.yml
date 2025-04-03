@@ -8,10 +8,8 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ macos-latest ]
+    runs-on: macos-11
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -33,5 +31,5 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3.1.2
         with:
-          name: electron-app-${{ matrix.os }}
+          name: electron-app-macos
           path: dist/
