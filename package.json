@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "electron:start": "concurrently \"npm run start\" \"wait-on http://localhost:3000 && electron .\"",
-    "build": "react-scripts build",
+    "build": "react-scripts build && tsc",
     "electron:build": "npm run build && electron-builder"
   },
   "eslintConfig": {
@@ -56,8 +56,12 @@
     "productName": "React-electron-app",
     "files": [
       "build/**/*",
-      "src/electron/**/*"
+      "package.json"
     ],
+    "extraMetadata": {
+      "main": "build/electron/main.js"
+    }
+,
     "directories": {
       "buildResources": "assets"
     },
