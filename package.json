@@ -62,7 +62,7 @@
       "package.json"
     ],
     "extraMetadata": {
-      "main": "electron/main.js"
+      "main": "build/electron/main.js"
     },
     "directories": {
       "buildResources": "assets"
