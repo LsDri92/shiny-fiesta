@@ -8,14 +8,14 @@ on:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-latest  # Usa la versión más reciente de macOS
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -25,11 +25,11 @@ jobs:
       - name: Build React App
         run: npm run build
 
-      - name: Build Electron App
-        run: npm run electron:build
+      - name: Build Electron App (Mac ARM64)
+        run: npm run electron:build -- --mac --arm64
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: electron-app-macos
-          path: dist/
+          path: dist/mac/*.dmg  # Ajusta si usas otro formato como .zip o .pkg

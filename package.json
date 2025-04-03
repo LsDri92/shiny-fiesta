@@ -71,7 +71,13 @@
       "target": "nsis"
     },
     "mac": {
-      "target": "dmg"
+      "identity": null,
+      "category": "public.app-category.utilities",
+      "icon": "public/icon.icns",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist"
     },
     "publish": null
   }
