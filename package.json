@@ -54,6 +54,9 @@
     "electron-builder": "^26.0.12",
     "wait-on": "^8.0.3"
   },
+  "optionalDependencies": {
+    "dmg-license": "^1.0.11"
+  },
   "build": {
     "appId": "com.LsDri.react-electron-app",
     "productName": "React-electron-app",
