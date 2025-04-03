@@ -59,6 +59,7 @@
     "productName": "React-electron-app",
     "files": [
       "build/**/*",
+      "electron/**/*",
       "package.json"
     ],
     "extraMetadata": {

@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest  # Usa la versión más reciente de macOS
+    runs-on: macos-15  # Usa la versión más reciente de macOS
 
     steps:
       - name: Checkout repository
@@ -25,8 +25,8 @@ jobs:
       - name: Build React App
         run: npm run build
 
-      - name: Build Electron App (Mac ARM64)
-        run: npm run electron:build -- --mac --arm64
+      - name: Build Electron App (Universal)
+        run: npm run electron:build -- --mac --universal
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
