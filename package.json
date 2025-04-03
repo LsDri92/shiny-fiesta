@@ -65,12 +65,14 @@
       "main": "build/electron/main.js"
     },
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "assets",
+      "output": "dist"
     },
     "win": {
       "target": "nsis"
     },
     "mac": {
+      "target": ["dmg", "zip"],
       "identity": null,
       "category": "public.app-category.utilities",
       "icon": "public/icon.icns",
