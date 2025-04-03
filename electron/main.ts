@@ -16,9 +16,9 @@ function createWindow() {
   // Cargar la aplicación de React (en desarrollo apuntar a localhost)
   // En producción se cargará el build de la app
   if (process.env.NODE_ENV === 'development') {
-    mainWindow.loadURL('http://localhost:3000');
+    mainWindow.loadURL(`file://${path.join(__dirname, '../index.html')}`);
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../../build/index.html'));
+    mainWindow.loadURL(`file://${path.join(__dirname, '../index.html')}`);
   }
 }
 
